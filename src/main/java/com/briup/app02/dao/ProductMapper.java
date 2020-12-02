@@ -10,4 +10,6 @@ public interface ProductMapper {
     void insert(Product product);
 
     void deleteById(Long id);
+
+    void updeteById(Product product);
 }

@@ -32,4 +32,10 @@ public class ProductController {
         productService.deleteById(id);
         return "删除成功";
     }
+
+    @PostMapping("updateById")
+    public String updateById(Product product){
+        productService.updateById(product);
+        return "修改成功";
+    }
 }

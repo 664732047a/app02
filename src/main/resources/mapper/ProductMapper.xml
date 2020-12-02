@@ -14,6 +14,19 @@
   <delete id="deleteById" parameterType="long">
     DELETE FROM jz_product WHERE id = #{id}
   </delete>
+  
+  <update id="updeteById" parameterType="com.briup.app02.bean.Product">
+    UPDATE jz_product
+     SET name = #{name,jdbcType=VARCHAR},
+     introduce = #{introduce,jdbcType=VARCHAR},
+     price = #{price,jdbcType=VARCHAR},
+     status = #{status,jdbcType=VARCHAR},
+     photo = #{photo,jdbcType=VARCHAR},
+     sales = #{sales,jdbcType=BIGINT},
+     category_id = #{categoryId,jdbcType=BIGINT}
+     WHERE id = #{id,jdbcType=BIGINT}
+
+  </update>
 
   <resultMap id="abc" type="com.briup.app02.bean.Product">
     <id property="id" column="id"></id>
