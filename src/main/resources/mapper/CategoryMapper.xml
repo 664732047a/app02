@@ -18,6 +18,10 @@
     SELECT * FROM jz_category WHERE parent_id = #{id}
   </select>
 
+  <select id="selectById" resultMap="CategoryBaseResultMap">
+    SELECT * FROM jz_category WHERE id = #{id}
+  </select>
+
   <resultMap id="CategoryTreeResultMap"
              type="com.briup.app02.bean.extend.CategoryExtend"
              extends="CategoryBaseResultMap">

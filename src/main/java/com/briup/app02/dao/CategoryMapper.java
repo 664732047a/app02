@@ -14,4 +14,6 @@ public interface CategoryMapper {
     List<CategoryExtend> selectCategoryTree();
 
     List<CategoryExtend> selectByParentId(Long id);
+
+    Category selectById(Long id);
 }

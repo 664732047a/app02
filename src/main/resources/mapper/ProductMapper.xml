@@ -3,7 +3,7 @@
 <mapper namespace="com.briup.app02.dao.ProductMapper">
 
 <!--  查询全部商品-->
-  <select id="selectAll" resultMap="abc">
+  <select id="selectAll" resultMap="ProductBaseResultMap">
     SELECT * FROM jz_product
   </select>
 
@@ -28,7 +28,7 @@
 
   </update>
 
-  <resultMap id="abc" type="com.briup.app02.bean.Product">
+  <resultMap id="ProductBaseResultMap" type="com.briup.app02.bean.Product">
     <id property="id" column="id"></id>
     <result property="name" column="name"></result>
     <result property="introduce" column="introduce"></result>

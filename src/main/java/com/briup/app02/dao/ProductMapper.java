@@ -12,4 +12,6 @@ public interface ProductMapper {
     void deleteById(Long id);
 
     void updeteById(Product product);
+
+
 }

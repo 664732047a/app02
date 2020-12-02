@@ -1,6 +1,7 @@
 package com.briup.app02.web.controller;
 
 import com.briup.app02.bean.Product;
+import com.briup.app02.bean.extend.ProductExtend;
 import com.briup.app02.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,5 +38,10 @@ public class ProductController {
     public String updateById(Product product){
         productService.updateById(product);
         return "修改成功";
+    }
+
+    @GetMapping("findAllWithCategory")
+    public List<ProductExtend> findAllWithCategory(){
+        return productService.findAllWithCategory();
     }
 }
