@@ -1,6 +1,7 @@
 package com.briup.app02.service.impl;
 
 import com.briup.app02.bean.Product;
+import com.briup.app02.bean.ProductExample;
 import com.briup.app02.bean.extend.ProductExtend;
 import com.briup.app02.dao.ProductMapper;
 import com.briup.app02.dao.extend.ProductExtendMapper;
@@ -21,7 +22,8 @@ public class IProductServiceImpl implements IProductService {
 
     @Override
     public List<Product> findAll() {
-        return productMapper.selectAll();
+        ProductExample example = new ProductExample();
+        return productMapper.selectByExample(example);
     }
 
     @Override
@@ -31,12 +33,12 @@ public class IProductServiceImpl implements IProductService {
 
     @Override
     public void deleteById(Long id) {
-        productMapper.deleteById(id);
+        productMapper.deleteByPrimaryKey(id);
     }
 
     @Override
     public void updateById(Product product) {
-        productMapper.updeteById(product);
+        productMapper.updateByPrimaryKey(product);
     }
 
     @Override

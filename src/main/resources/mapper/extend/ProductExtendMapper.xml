@@ -6,10 +6,11 @@
             resultMap="ProductExtendResultMap">
         SELECT * FROM jz_product
     </select>
+
     <resultMap id="ProductExtendResultMap"
                type="com.briup.app02.bean.extend.ProductExtend"
-               extends="com.briup.app02.dao.ProductMapper.ProductBaseResultMap">
-        <association property="category" column="category_id" select="com.briup.app02.dao.CategoryMapper.selectById"></association>
+               extends="com.briup.app02.dao.ProductMapper.BaseResultMap">
+        <association property="category" column="category_id" select="com.briup.app02.dao.CategoryMapper.selectByPrimaryKey"></association>
     </resultMap>
 
 </mapper>
